@@ -18,7 +18,7 @@ connection.connect(function (err) {
   }
 })
 
-app.get('/', function (req, res) {
+app.get('/testdb', function (req, res) {
   connection.query('select * from st_info', function (err, rows, fields) {
     connection.end()
     if (!err) {
