@@ -3,12 +3,17 @@ const morgan = require('morgan')
 const fs = require('fs')
 const path = require('path')
 const mongoClient = require('mongodb').MongoClient
+const env = require('dotenv').config({ path: '../.env' })
 
 const app = express()
 app.use(morgan('dev'))
 
+HOST = process.env.MongoDB_Hostname
+USERNAME = process.env.MongoDB_Username
+PASSWORD = process.env.MongoDB_Password
+
 var db
-var databaseUrl = 'mongodb://13.208.242.228:27017'
+var databaseUrl = `mongodb://${USERNAME}:${PASSWORD}@${HOST}:27017`
 
 app.get('/worldcup', (req, res) => {
   mongoClient.connect(databaseUrl, function (err, client) {
