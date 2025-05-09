@@ -1,0 +1,5 @@
+# Environment file
+.env
+
+# NodeJS files
+**/node_modules
