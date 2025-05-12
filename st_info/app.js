@@ -24,7 +24,7 @@ app.get('/', function (req, res) {
     if (!err) {
       // res.send(rows);
       res.writeHead(200, {
-        'content-type': 'text/html charset=utf-8',
+        'content-type': 'text/html; charset=utf-8',
       })
       var template = `
             <table border="1" margin:auto; style="text-align:center;">
